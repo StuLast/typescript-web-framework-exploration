@@ -12,25 +12,12 @@ export class User {
 
   private events: { [key: string]: Callback[] } = {};
 
-  /**
-   * 
-   * @param data 
-   */
   constructor(private data: UserProps) {}
 
-  /**
-   * 
-   * @param propName 
-   * @returns 
-   */
   get(propName: string): string | number {
     return this.data[propName];
   }
-
-  /**
-   * 
-   * @param update 
-   */
+ 
   set( update: UserProps): void {
    Object.assign(this.data, update);
   }
@@ -77,6 +64,5 @@ export class User {
     return;
   }
 }
-
 
 axios.get('http://localhost:3000/users/1');
