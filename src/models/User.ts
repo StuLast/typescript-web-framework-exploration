@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+import dbApi from '../api/dbApi'
 
 interface UserProps {
   id?: number
@@ -40,15 +41,18 @@ export class User {
   }
 
   fetch (): void {
-    axios.get(`http://localhost:3000/users/${this.get('id')}`)
+    axios.get(`/users/${this.get('id')}`)
     .then((res: AxiosResponse): void => {
       this.set(res.data)
     });
   }
 
   save (): void {
-    if(!this.data.id){
-      axios.post('http://localhost:3000/users', 
+
+    const id = this.get('id');
+
+    if(!id){
+      axios.post('/users', 
         JSON.stringify(this.data)
       ).then((res: AxiosResponse) => {
         console.log(res);
@@ -56,7 +60,7 @@ export class User {
       return;
     }
 
-    axios.put(`http://localhost:3000/users/${this.data.id}`, 
+    axios.put(`http://localhost:3000/users/${id}`, 
       JSON.stringify(this.data)
     ).then((res: AxiosResponse) => {
       console.log(res);
