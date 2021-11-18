@@ -1,18 +1,24 @@
 {
   "users": [
     {
-      "name": "Stu",
-      "age": 49,
+      "name": "Stu Man",
+      "age": 52,
       "id": 1
-    },
-    {
-      "{\"id\":2,\"age\":55}": "",
-      "id": 2
     },
     {
       "name": "Mandy",
       "age": 53,
       "id": 3
+    },
+    {
+      "name": "Brandy",
+      "age": 43,
+      "id": 4
+    },
+    {
+      "name": "Candy",
+      "age": 27,
+      "id": 5
     }
   ]
 }
