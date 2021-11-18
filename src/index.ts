@@ -1,13 +1,13 @@
 import { User } from './models/User';
+import axios, { AxiosResponse } from 'axios'
 
-const user = new User({ id: 1});
-console.log('gonna fetch a user with id of 1');
-
-user.on('change', () => {
-  console.log(user);
-});
-
-user.fetch();
+axios.get('http://localhost:3000/users')
+.then((response: AxiosResponse) =>{
+  console.log("DATA: ", response.data);
+})
+.catch((err) => {
+  console.log("ERROR:", err)
+})
 
 
 
