@@ -1,9 +1,9 @@
 {
   "users": [
     {
-      "name": "Stu",
-      "age": 49,
-      "id": 1
+      "id": 1,
+      "name": "Stu Man",
+      "age": 48
     },
     {
       "name": "Mandy",
@@ -16,29 +16,9 @@
       "id": 4
     },
     {
-      "name": "Brandy",
-      "age": 43,
+      "name": "Candy",
+      "age": 27,
       "id": 5
-    },
-    {
-      "name": "Brandy",
-      "age": 43,
-      "id": 6
-    },
-    {
-      "name": "Brandy",
-      "age": 43,
-      "id": 7
-    },
-    {
-      "name": "Brandy",
-      "age": 43,
-      "id": 8
-    },
-    {
-      "name": "Brandy",
-      "age": 43,
-      "id": 9
     }
   ]
 }

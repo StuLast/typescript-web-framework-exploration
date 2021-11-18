@@ -1,11 +1,13 @@
 import { User } from './models/User';
 
-const user = new User({id: 1});
-user.fetch()
+const user = new User({ id: 1});
+console.log('gonna fetch a user with id of 1');
 
-const candy = new User({name: 'Candy', age: 27});
-candy.save();
+user.on('change', () => {
+  console.log(user);
+});
 
-setTimeout(() => {
-  console.log(candy)
-}, 4000)
+user.fetch();
+
+
+
