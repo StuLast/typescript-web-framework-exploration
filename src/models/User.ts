@@ -2,6 +2,7 @@ import { Model } from './Model';
 import { Attributes } from './Attributes';
 import { ApiSync } from './ApiSync';
 import { Eventing } from './Eventing';
+import { Collection } from './Collection';
 
 export interface IuserProps {
   id?: number | undefined
@@ -19,6 +20,19 @@ export class User extends Model<IuserProps>{
       new ApiSync<IuserProps>(rootUrl)
     )
   }
+
+  static buildUserCollection(): Collection<User, IuserProps> {
+    return new Collection<User, IuserProps>(
+      rootUrl,
+      (json: IuserProps) => User.buildUser(json)
+      );
+  }
+
+  public setRandomAge = (): void => {
+    const age = Math.ceil(Math.random() * 100);
+    this.set({age});
+  }
+
 }
 
 

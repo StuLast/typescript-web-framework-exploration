@@ -1,13 +1,18 @@
-import { User } from './models/User';
-import axios, { AxiosResponse } from 'axios'
+import { UserForm } from "./views/UserForm";
+import { User } from "./models/User";
 
-axios.get('http://localhost:3000/users')
-.then((response: AxiosResponse) =>{
-  console.log("DATA: ", response.data);
-})
-.catch((err) => {
-  console.log("ERROR:", err)
-})
+const user = User.buildUser({name: 'My Name', age: 20});
+
+const root = document.getElementById('root')
+if(root) {
+  const userForm = new UserForm(root, user);
+  userForm.render();
+} else {
+  throw new Error ('Root element not found!');
+}
+
+
+
 
 
 
